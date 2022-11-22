@@ -195,7 +195,9 @@ void errado(){
   
   lcd.clear();
   lcd.setCursor(0,0);
-  lcd.print("Fim de Jogo!");
+  lcd.print("This is the end!");
+  lcd.setCursor(0,1);
+  lcd.print("Thanks for playing!");
   
   delay(2000);
 }
@@ -208,6 +210,7 @@ void SelecionaQuestao(int nQuestao){
         lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 1");
+          delay (2000);
           lcd.clear();
           lcd.setCursor(3,1);
           lcd.print ("Fill the gap:");
@@ -240,6 +243,7 @@ void SelecionaQuestao(int nQuestao){
           lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 2");
+          delay (2000);
           lcd.clear();
           lcd.setCursor(3,1);
           lcd.print ("Fill the gap:");
@@ -271,11 +275,14 @@ void SelecionaQuestao(int nQuestao){
           lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 3");
+          delay (2000);
           lcd.clear();
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
           lcd.setCursor(0,1);
           lcd.print ("Whats the meaning of");
           lcd.setCursor(0,2);
-          lcd.print("the word “parents”?");
+          lcd.print("the word [parents]?");
     
           delay (3000);
           lcd.clear();
@@ -303,7 +310,10 @@ void SelecionaQuestao(int nQuestao){
          lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 4");
+          delay (2000);
           lcd.clear();
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
           lcd.setCursor(5,1);
           lcd.print ("Choose the");
           lcd.setCursor(2,2);
@@ -331,30 +341,32 @@ void SelecionaQuestao(int nQuestao){
         }
     break;
     
-    //-----------PERGUNTA DE INGLÊS QUE FALTA----------------------------------
     case 4:
         lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 5");
+          delay (2000);
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print ("(3X14+154-161)X0");
-          lcd.setCursor(3,1);
-          lcd.print("e igual a:");
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(0,1);
+          lcd.print ("Whats the meaning of");
+          lcd.setCursor(0,2);
+          lcd.print("the word [fate]?");
     
           delay (3000);
           lcd.clear();
           lcd.setCursor(0,0);
-          lcd.print ("A-0"); //certa
+          lcd.print ("A-Destino"); //certa
           delay(1000);
           lcd.setCursor(0,1);
-          lcd.print ("B-505");
+          lcd.print ("B-Fato");
           delay(1000);
           lcd.setCursor(0,2);
-          lcd.print ("C-245");
+          lcd.print ("C-Factual");
           delay(1000);
           lcd.setCursor(0,4);
-          lcd.print ("D-34");
+          lcd.print ("D-Fatiar");
           delay (1000);
           
         if(AnalisaBotao()=='A'){
@@ -363,36 +375,38 @@ void SelecionaQuestao(int nQuestao){
          errado();
         } 
          break;
-    //-----------------------------------------------------------------------
-
+  
       //CONHECIMENTO GERAIS
     case 5:
           lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 6");
+          delay (2000);
           lcd.clear();
-          lcd.setCursor(4,1);
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(0,1);
           lcd.print ("When was fire");
-          lcd.setCursor(5,2);
+          lcd.setCursor(0,2);
           lcd.print ("discovered?");
     
           lcd.clear();
           delay (3000);
           lcd.clear();
           lcd.setCursor(0,0);
-          lcd.print ("A-30");
+          lcd.print ("A-Neolithic");
           delay(1000);
           lcd.setCursor(0,1);
-          lcd.print ("B-45");
+          lcd.print ("B-Paleolithic"); //certa
           delay(1000);
           lcd.setCursor(0,2);
-          lcd.print ("C-60");
+          lcd.print ("C-Middle Age");
           delay(1000);
           lcd.setCursor(0,4);
-          lcd.print ("D-75");
+          lcd.print ("D-Stone Age");
           delay (1000);
           
-          if(AnalisaBotao()=='D'){
+          if(AnalisaBotao()=='B'){
           correto();
           }else{
           lcd.clear();
@@ -400,16 +414,19 @@ void SelecionaQuestao(int nQuestao){
         }
     break;
     
-    //Geografia
+  
     case 6:
           lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 7");
+          delay (2000);
           lcd.clear();
-          lcd.setCursor(2,0);         
-          lcd.print("Qual o menor");
-          lcd.setCursor(1,1); 
-          lcd.print("pais do mundo?");
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(0,1);         
+          lcd.print("The smallest country");
+          lcd.setCursor(0,2); 
+          lcd.print("in the world is:");
     
           delay (3000);
           lcd.clear();
@@ -417,13 +434,13 @@ void SelecionaQuestao(int nQuestao){
           lcd.print ("A-India");
           delay(1000);
           lcd.setCursor(0,1);
-          lcd.print ("B-Brasil");
+          lcd.print ("B-Scotland");
           delay(1000);
           lcd.setCursor(0,2);
-          lcd.print ("C-Vaticano");
+          lcd.print ("C-Vatican");//certa
           delay(1000);
           lcd.setCursor(0,4);
-          lcd.print ("D-Escocia");
+          lcd.print ("D-Bhutan");
           delay (1000);
           
         if(AnalisaBotao()=='C'){
@@ -437,28 +454,33 @@ void SelecionaQuestao(int nQuestao){
           lcd.clear();
           lcd.setCursor(0,0);
           lcd.print("Questao 8");
+          delay (2000); 
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print ("Manaus e capital");
-          lcd.setCursor(1,1);
-          lcd.print ("de que estado?");
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(0,1);
+          lcd.print ("How many elements");
+          lcd.setCursor(0,2);
+          lcd.print ("are there on the");
+          lcd.setCursor(0,4);
+          lcd.print ("periodic table?");
     
           delay (3000);
           lcd.clear();
           lcd.setCursor(0,0);
-          lcd.print ("A-SP");
+          lcd.print ("A-112");
           delay  (1000);
           lcd.setCursor(0,1);
-          lcd.print ("B-AM");
+          lcd.print ("B-114");
           delay  (1000);
           lcd.setCursor(0,2);
-          lcd.print ("C-RJ");
+          lcd.print ("C-116");
           delay  (1000);
           lcd.setCursor(0,3);
-          lcd.print ("D-RS");
+          lcd.print ("D-118"); //certa
           delay (1000);
     
-        if(AnalisaBotao()=='B'){
+        if(AnalisaBotao()=='D'){
          correto();
         }else{
           lcd.clear();
@@ -466,7 +488,6 @@ void SelecionaQuestao(int nQuestao){
         }
     break;
     
-    //História
     case 8:
         
         lcd.clear();
@@ -474,27 +495,29 @@ void SelecionaQuestao(int nQuestao){
         lcd.print("Questao 9");
         delay (2000);
         lcd.clear();
-        lcd.setCursor(2,0);
-        lcd.print ("Quando o fogo");
-        lcd.setCursor(1,1);
-        lcd.print("foi descoberto?");
+        lcd.setCursor(7,0);
+        lcd.print ("-==+==-");
+        lcd.setCursor(0,1);
+        lcd.print ("The biggest country");
+        lcd.setCursor(0,2);
+        lcd.print("in the world is:");
     
         delay (3000);
         lcd.clear();
         lcd.setCursor(0,0);
-        lcd.print ("A-Neolitico");
+        lcd.print ("A-Russia"); //certa
         delay  (1000);
         lcd.setCursor(0,1);
-        lcd.print ("B-Paleolitico");
+        lcd.print ("B-Canada");
         delay  (1000);
         lcd.setCursor(0,2);
-        lcd.print ("C-Idade media");
+        lcd.print ("C-United States");
         delay  (1000);
         lcd.setCursor(0,3);
-        lcd.print ("D-Idade da pedra");
+        lcd.print ("D-China");
         delay (1000);
     
-        if(AnalisaBotao()=='B'){
+        if(AnalisaBotao()=='A'){
         correto();
         }else{
          errado();
@@ -507,10 +530,12 @@ void SelecionaQuestao(int nQuestao){
           lcd.print("Questao 10");
           delay (2000);
           lcd.clear();
-          lcd.setCursor(1,1);
-          lcd.print ("Qual artista pintou");
-          lcd.setCursor(1,2);
-          lcd.print ("o quadro [Abapuru]?");
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(0,1);
+          lcd.print ("Which artist painted");
+          lcd.setCursor(0,2);
+          lcd.print ("the work [Abapuru]?");
     
           delay (3000);
           lcd.clear();
@@ -518,7 +543,7 @@ void SelecionaQuestao(int nQuestao){
           lcd.print ("A-Romero Britto");
           delay (1000);
           lcd.setCursor(0,1);
-          lcd.print ("B-Tarsila do Amaral");
+          lcd.print ("B-Tarsila do Amaral"); //certa
           delay (1000);
           lcd.setCursor(0,2);
           lcd.print ("C-Picasso");
