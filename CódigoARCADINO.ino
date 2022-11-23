@@ -112,13 +112,12 @@ byte Entrada9[8] = {
   B00000,
 };
 
-
 void setup(){
   pinMode(BotA, INPUT_PULLUP);
   pinMode(BotB, INPUT_PULLUP);
   pinMode(BotC, INPUT_PULLUP);
   pinMode(BotD, INPUT_PULLUP);
-
+  
   lcd.begin(20, 4);
   
   lcd.createChar(1, Entrada);
@@ -130,7 +129,6 @@ void setup(){
   lcd.createChar(7, Entrada7);
   lcd.createChar(8, Entrada8);
   lcd.createChar(9, Entrada9);
-
   lcd.setCursor(1,1);
   lcd.write(byte(1));
   lcd.setCursor(2,1);
@@ -153,38 +151,47 @@ void setup(){
   lcd.write(byte(6));
   lcd.setCursor(3,4);
   lcd.write(byte(9));
-for (i =0; i <16; i++){     
-lcd.scrollDisplayRight();     
-delay(300);  
-}   
-delay (200);
-lcd.clear();
-lcd.setCursor(7,0);
-lcd.print ("-==+==-");
-lcd.setCursor(5,1);
-lcd.print ("Welcome to");
-lcd.setCursor(2,2);
-lcd.print("A r c a D I N O");
-lcd.setCursor(7,4);
-lcd.print ("-==+==-");
-
-Serial.begin(9600);
-delay(3000);
-lcd.clear();
-geraSequencia();
+  
+  for (i =0; i <16; i++){     
+    lcd.scrollDisplayRight();     
+    delay(300);  
+  }
+  
+  delay (200);
+  lcd.clear();
+  lcd.setCursor(7,0);
+  lcd.print ("-==+==-");
+  lcd.setCursor(5,1);
+  lcd.print ("Welcome to");
+  lcd.setCursor(2,2);
+  lcd.print("A r c a D I N O");
+  lcd.setCursor(7,4);
+  lcd.print ("-==+==-");
+  Serial.begin(9600);
+  delay(3000);
+  lcd.clear();
+  geraSequencia();
 }
 
 void correto(){
           lcd.clear();
-          lcd.setCursor(4,0);
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(6,2);
           lcd.print("Correto!");
+          lcd.setCursor(7,4);
+          lcd.print ("-==+==-");
           delay (1000);
 }
   
 void errado(){
           lcd.clear();
-           lcd.setCursor(5,0);
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
+          lcd.setCursor(7,2);
           lcd.print("Errado!");
+          lcd.setCursor(7,4);
+          lcd.print ("-==+==-");
           delay (1000);
 } 
 
@@ -194,12 +201,15 @@ void errado(){
   }
   
   lcd.clear();
-  lcd.setCursor(0,0);
+  lcd.setCursor(7,0);
+  lcd.print ("-==+==-");
+  lcd.setCursor(2,1);
   lcd.print("This is the end!");
-  lcd.setCursor(0,1);
+  lcd.setCursor(1,2);
   lcd.print("Thanks for playing!");
-  
-  delay(2000);
+  lcd.setCursor(7,4);
+  lcd.print ("-==+==-");
+  delay(4000);
 }
 
 void SelecionaQuestao(int nQuestao){
@@ -208,10 +218,12 @@ void SelecionaQuestao(int nQuestao){
   switch(nQuestao){
     case 0:
         lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 1");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 7");
           delay (2000);
           lcd.clear();
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
           lcd.setCursor(3,1);
           lcd.print ("Fill the gap:");
           lcd.setCursor(1,2);
@@ -241,10 +253,12 @@ void SelecionaQuestao(int nQuestao){
     
     case 1:
           lcd.clear();
-          lcd.setCursor(0,0);
+          lcd.setCursor(5,1);
           lcd.print("Questao 2");
           delay (2000);
           lcd.clear();
+          lcd.setCursor(7,0);
+          lcd.print ("-==+==-");
           lcd.setCursor(3,1);
           lcd.print ("Fill the gap:");
           lcd.setCursor(1,2);
@@ -273,15 +287,15 @@ void SelecionaQuestao(int nQuestao){
     
     case 2:
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 3");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 10");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
           lcd.setCursor(0,1);
           lcd.print ("Whats the meaning of");
-          lcd.setCursor(0,2);
+          lcd.setCursor(1,2);
           lcd.print("the word [parents]?");
     
           delay (3000);
@@ -308,8 +322,8 @@ void SelecionaQuestao(int nQuestao){
     
      case 3:
          lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 4");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 6");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
@@ -343,15 +357,15 @@ void SelecionaQuestao(int nQuestao){
     
     case 4:
         lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 5");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 8");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
           lcd.setCursor(0,1);
           lcd.print ("Whats the meaning of");
-          lcd.setCursor(0,2);
+          lcd.setCursor(2,2);
           lcd.print("the word [fate]?");
     
           delay (3000);
@@ -379,18 +393,17 @@ void SelecionaQuestao(int nQuestao){
       //CONHECIMENTO GERAIS
     case 5:
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 6");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 3");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
-          lcd.setCursor(0,1);
+          lcd.setCursor(4,1);
           lcd.print ("When was fire");
-          lcd.setCursor(0,2);
+          lcd.setCursor(5,2);
           lcd.print ("discovered?");
     
-          lcd.clear();
           delay (3000);
           lcd.clear();
           lcd.setCursor(0,0);
@@ -417,15 +430,15 @@ void SelecionaQuestao(int nQuestao){
   
     case 6:
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 7");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 4");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
           lcd.setCursor(0,1);         
           lcd.print("The smallest country");
-          lcd.setCursor(0,2); 
+          lcd.setCursor(2,2); 
           lcd.print("in the world is:");
     
           delay (3000);
@@ -452,17 +465,17 @@ void SelecionaQuestao(int nQuestao){
     
      case 7:
           lcd.clear();
-          lcd.setCursor(0,0);
-          lcd.print("Questao 8");
+          lcd.setCursor(5,1);
+          lcd.print("Questao 5");
           delay (2000); 
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
-          lcd.setCursor(0,1);
+          lcd.setCursor(2,1);
           lcd.print ("How many elements");
-          lcd.setCursor(0,2);
+          lcd.setCursor(2,2);
           lcd.print ("are there on the");
-          lcd.setCursor(0,4);
+          lcd.setCursor(3,4);
           lcd.print ("periodic table?");
     
           delay (3000);
@@ -491,15 +504,15 @@ void SelecionaQuestao(int nQuestao){
     case 8:
         
         lcd.clear();
-        lcd.setCursor(0,0);
+        lcd.setCursor(5,1);
         lcd.print("Questao 9");
         delay (2000);
         lcd.clear();
         lcd.setCursor(7,0);
         lcd.print ("-==+==-");
-        lcd.setCursor(0,1);
+        lcd.setCursor(1,1);
         lcd.print ("The biggest country");
-        lcd.setCursor(0,2);
+        lcd.setCursor(2,2);
         lcd.print("in the world is:");
     
         delay (3000);
@@ -527,14 +540,14 @@ void SelecionaQuestao(int nQuestao){
     case 9:
           lcd.clear();
           lcd.setCursor(5,1);
-          lcd.print("Questao 10");
+          lcd.print("Questao 1");
           delay (2000);
           lcd.clear();
           lcd.setCursor(7,0);
           lcd.print ("-==+==-");
           lcd.setCursor(0,1);
           lcd.print ("Which artist painted");
-          lcd.setCursor(0,2);
+          lcd.setCursor(1,2);
           lcd.print ("the work [Abapuru]?");
     
           delay (3000);
@@ -559,7 +572,22 @@ void SelecionaQuestao(int nQuestao){
         }
     break;
   }
-    
+}
+
+
+void geraSequencia(){
+  randomSeed(random(0, 1000));
+  for (int i = 0; i < nQuestao; i++){     
+    array[i] = i;
+  }
+  for (int i = 0; i < nQuestao; i++) {    
+    int temp = array[i];
+    int novoIndice = random(nQuestao);
+    array[i] = array[novoIndice];
+    array[novoIndice] = temp;
+  }
+}
+
 char AnalisaBotao(){
   bool BotaoPressionado = true;
   
@@ -580,16 +608,3 @@ char AnalisaBotao(){
   }
 }
 
-
-void geraSequencia(){
-  randomSeed(random(0, 1000));
-  for (int i = 0; i < nQuestao; i++){     
-    array[i] = i;
-  }
-  for (int i = 0; i < nQuestao; i++) {    
-    int temp = array[i];
-    int novoIndice = random(nQuestao);
-    array[i] = array[novoIndice];
-    array[novoIndice] = temp;
-  }
-}
